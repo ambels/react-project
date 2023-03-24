@@ -12,6 +12,8 @@ export default function Parent() {
     }
     
     function handleClick() {
+        alert(text);
+        
         fetch(endpoint, {
             method: 'POST',
             headers: {
@@ -24,13 +26,12 @@ export default function Parent() {
             console.log('response', response);
             setText('');
         });
-        
-        alert(text); 
     }
 
     function handleChange(event) {
         console.log('event', event.target);
         console.log('event value', event.target.value);
+        setText(event.target.value);
     }
     return (
         <>
